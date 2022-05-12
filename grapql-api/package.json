@@ -1,0 +1,32 @@
+{
+  "name": "graphql-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev:db": "./src/scripts/start-db.sh",
+    "dev": "nodemon -w src --ext ts --exec ts-node src/index.ts",
+    "test": "doppler --debug run --command='cross-env NODE_PATH=./src nodemon src/index.ts' ",
+    "typeorm:cli": "ts-node -r ./node_modules/typeorm/cli -f ./ormconfig-migrations.ts",
+    "migration-generate": "pnpm run typeorm:cli -- migration:generate -n"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.6.5",
+    "graphql": "^15.3.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.36"
+  },
+  "devDependencies": {
+    "@types/validator": "^13.7.1",
+    "class-validator": "^0.13.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  }
+}

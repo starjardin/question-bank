@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+yarn-error.log
+error.log
+info.log
+*.log
+.vscode
+yarn.lock
